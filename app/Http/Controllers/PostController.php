@@ -9,7 +9,8 @@ class PostController extends Controller
 {
     public function index(Post $post)
     {
-        return $post->get();
-        // get メソッドはPostモデルに関連付けられたデータベーステーブルからすべてのレコードを取得し、それを返す
+        return view('posts.index') -> with(['posts' => $post->getPaginateByLimit(1)]);
     }
 }
+
+?>
