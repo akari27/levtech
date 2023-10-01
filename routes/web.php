@@ -19,3 +19,6 @@ Route::get('/',[PostController::class,'index']);
 Route::get('/posts/create',[PostController::class,'create']);
 
 Route::get('/posts/{post}',[PostController::class,'show']);
+// これよくわかってないけど、とりあえず同じ階層なら{}より前に固定の文字列？のルートかくべきってぐらいの認識でいる
+
+Route::post('/posts',[PostController::class,'store']);
