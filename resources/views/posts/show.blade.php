@@ -8,10 +8,12 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
         <h1 class="title">
             {{ $post->title }}
         </h1>
+        <div class="edit">
+            <a href="/posts/{{ $post->id }}/edit">編集</a>
+        </div>
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
