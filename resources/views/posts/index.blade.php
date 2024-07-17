@@ -6,6 +6,10 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+<x-app-layout>
+    <x-slot name="header">
+        　（ヘッダー名）
+    </x-slot>
     <body>
         <h1>Blog Name</h1>
         <a href='/posts/create'>create</a>
@@ -15,6 +19,7 @@
                     <h2 class='title'>
                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
+                    <a href="">{{ $post->category->name }}</a>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
@@ -24,6 +29,7 @@
             @endforeach
         </div>
         <div class='pagenate'>{{ $posts->links() }}</div>
+        <p>ログインユーザ : {{ Auth::user()->name }}</p>
         <script>
             function deletePost(id) {
                 'use strict'
@@ -35,3 +41,4 @@
         </script>
     </body>
 </html>
+</x-app-layout>

@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <title>Blog</title>
     </head>
+<x-app-layout>
+    <x-slot name="header">
+        　（ヘッダー名）
+    </x-slot>
     <body>
         <h1>編集画面</h1>
         <div class="content">
@@ -28,3 +32,4 @@
         </div>
     </body>
 </html>
+</x-app-layout>
